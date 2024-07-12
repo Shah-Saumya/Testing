@@ -1,0 +1,31 @@
+{
+    "tasks": {
+        "lint": "deno lint src && deno task eslint",
+        "fmt": "deno fmt src",
+        "eslint": "deno run -A lint.ts"
+    },
+    "lint": {
+        "include": [
+            "src/"
+        ],
+        "exclude": [],
+        "rules": {
+            "tags": [
+                "recommended"
+            ],
+            "include": [
+                "ban-untagged-todo"
+            ]
+        }
+    },
+    "fmt": {
+        "include": [
+            "src/"
+        ],
+        "exclude": [],
+        "indentWidth": 4
+    },
+    "imports": {
+        "@typescript-eslint/parser": "npm:@typescript-eslint/parser"
+    }
+}

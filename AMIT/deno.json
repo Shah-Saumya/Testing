@@ -1,0 +1,37 @@
+{
+    "tasks": {
+        "lint": "deno lint src && deno task eslint",
+        "fmt": "deno fmt src",
+        "eslint": "deno run -A lint.ts",
+        "tlints": "deno run -A tlint.ts"
+
+    },
+    "lint": {
+        "include": [
+            "src/","test/"
+        ],
+        "exclude": [],
+        "rules": {
+            "tags": [
+                "recommended"
+            ],
+            "include": [
+                "ban-untagged-todo","no-long-functions"
+            ],
+            "exclude": ["no-unused-vars"]
+        }
+    },
+    "fmt": {
+        "include": [
+            "src/"
+        ],
+        "exclude": [],
+        "options": {
+            "useTabs": false,
+            "lineWidth": 80,
+            "indentWidth": 2,
+            "singleQuote": true,
+            "proseWrap": "always"
+        }
+    }
+}
